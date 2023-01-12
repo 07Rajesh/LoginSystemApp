@@ -1,0 +1,91 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Login Here</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Login" asp-controller="Account">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="FName" id="FName" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="LName" id="LName" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input type="password" name="Password" id="Password" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <input type="password" name="CPassword" id="CPassword" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Mobile</label>
+                                    <input type="text" name="Mobile" id="Mobile" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Select Gender: <span class="mandatory">*</span></label>
+                                    <select id="ddlGender" class="form-control">
+                                        <option value="-1">Select</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        <option value="3">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Address1</label>
+                                    <textarea name="Address1" id="Address1" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label>Address2</label>
+                                    <textarea name="Address2" id="Address2" class="form-control" />
+                                </div>
+                            </div>
+
+
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success" id="btnSignUp">SignUp</button>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <a href="#">Already have account login here </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

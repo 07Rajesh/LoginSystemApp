@@ -10,19 +10,20 @@ namespace LoginSystemApp.Models
     {
         DBConnection dB = new DBConnection();
 
-        public string SignCustomer(SignUpModel sign)
+        public string SignUpCustomer(SignUpModel sign)
         {
             string message = string.Empty;
-            SqlCommand command = new SqlCommand("sp_insert_customers",dB.connection);
+            SqlCommand command = new SqlCommand("sp_insert_customers", dB.connection);
             command.CommandType = System.Data.CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@FName", sign.FName);
             command.Parameters.AddWithValue("@LName", sign.LName);
             command.Parameters.AddWithValue("@Email", sign.Email);
             command.Parameters.AddWithValue("@Password", sign.Password);
             command.Parameters.AddWithValue("@Mobile", sign.Mobile);
-            command.Parameters.AddWithValue("@Gender", sign.Gender);
+            command.Parameters.AddWithValue("@Gender",sign.Gender);
             command.Parameters.AddWithValue("@Address1", sign.Address1);
             command.Parameters.AddWithValue("@Address2", sign.Address2);
+            command.Parameters.AddWithValue("@Is_Active", sign.Is_Active);
 
             if (dB.connection.State == System.Data.ConnectionState.Closed)
             {
@@ -45,10 +46,11 @@ namespace LoginSystemApp.Models
 
             if (dB.connection.State == System.Data.ConnectionState.Closed)
             {
-                dB.connection.Open();
+                 dB.connection.Open();
             }
          int result=(int)command.ExecuteScalar();
             dB.connection.Close();
+
             return result;
         }
     }

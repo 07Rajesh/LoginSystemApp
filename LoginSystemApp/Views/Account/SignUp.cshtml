@@ -1,4 +1,7 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿@{
+    Layout = null;
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
@@ -10,66 +13,86 @@
         <div class="col-8 offset-2">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Login Here</h4>
+                    <h4 class="card-title">SignUp Here</h4>
                 </div>
                 <div class="card-body">
-                    <form asp-action="Login" asp-controller="Account">
+                    <form asp-action="SignUp" asp-controller="Account">
                         <div class="row">
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group" id="FormGroupFName">
                                     <label>First Name</label>
-                                    <input type="text" name="FName" id="FName" class="form-control" />
+                                    <input type="text" name="FName" id="txtFName" class="form-control" />
+                                    <span id="errFName"></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group" id="FormGroupLName">
                                     <label>Last Name</label>
-                                    <input type="text" name="LName" id="LName" class="form-control" />
+                                    <input type="text" name="LName" id="txtLName" class="form-control" />
+                                    <span id="errLName"></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group" id="FormGroupEmail">
+                                    <label>Email</label>
+                                    <input type="text" name="Email" id="txtEmail" class="form-control" />
+                                    <span id="errEmail"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group" id="FormGroupPassword">
                                     <label>Password</label>
-                                    <input type="password" name="Password" id="Password" class="form-control" />
+                                    <input type="password" name="Password" id="txtPassword" class="form-control" />
+                                    <span id="errPassword"></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group" id="FormGroupCPassword">
                                     <label>Confirm Password</label>
-                                    <input type="password" name="CPassword" id="CPassword" class="form-control" />
+                                    <input type="password" name="CPassword" id="txtCPassword" class="form-control" />
+                                    <span id="errCPassword"></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
-                                    <label>Mobile</label>
-                                    <input type="text" name="Mobile" id="Mobile" class="form-control" />
+                                <div class="form-group" id="FormGroupMobile">
+                                    <label>Mobile Number</label>
+                                    <input type="text" name="Mobile" id="txtMobile" class="form-control" />
+                                    <span id="errMobile"></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
-                                    <label>Select Gender: <span class="mandatory">*</span></label>
-                                    <select id="ddlGender" class="form-control">
+                                <div class="form-group" id="FormGroupGender">
+                                    <label>Select Gender</label>
+                                    <select id="ddlGender" class="form-control" name="Gender">
                                         <option value="-1">Select</option>
                                         <option value="1">Male</option>
                                         <option value="2">Female</option>
                                         <option value="3">Other</option>
                                     </select>
+                                    <span id="errGender"></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group" id="FormGroupAddress1">
                                     <label>Address1</label>
-                                    <textarea name="Address1" id="Address1" class="form-control" />
+                                    <textarea name="Address1" id="txtAddress1" class="form-control"></textarea>
+                                    <span id="errAddress1"></span>
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="form-group">
+                                <div class="form-group" id="FormGroupAddress2">
                                     <label>Address2</label>
-                                    <textarea name="Address2" id="Address2" class="form-control" />
+                                    <textarea name="Address2" id="txtAddress2" class="form-control"></textarea>
+                                    <span id="errAddress2"></span>
                                 </div>
                             </div>
-
-
+                            <div class="col-6">
+                                <div class="form-group" id="FormGroupIs_Active">
+                                    <label>Is_Active</label>
+                                    <textarea name="Is_Active" id="number" class="form-control"></textarea>
+                                    <span id="errIs_Active"></span>
+                                </div>
+                            </div>
                             <div class="col-12">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-success" id="btnSignUp">SignUp</button>
@@ -77,7 +100,12 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <a href="#">Already have account login here </a>
+                                    <a asp-action="Login" asp-controller="Account">Already have account login here </a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <p class="text-info">@ViewBag.message</p>
                                 </div>
                             </div>
                         </div>

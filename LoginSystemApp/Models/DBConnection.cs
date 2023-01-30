@@ -12,7 +12,7 @@ namespace LoginSystemApp.Models
        public SqlConnection connection;
      public DBConnection()
         {
-            connection = new SqlConnection("Data Source=DESKTOP-P714P32;Initial Catalog=SignLog;Integrated Security=True");
+            connection = new SqlConnection("Data Source=DESKTOP-P714P32;Initial Catalog=SignLog;Integrated Security=True;TrustServerCertificate=True");
         }
     }
 }

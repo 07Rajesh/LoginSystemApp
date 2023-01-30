@@ -15,5 +15,6 @@ namespace LoginSystemApp.Models
         public string Gender { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
+        public int Is_Active { get; set; }
     }
 }
